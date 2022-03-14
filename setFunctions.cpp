@@ -8,6 +8,18 @@ Set<char> setUnion(const Set<char>& s1, const Set<char>& s2)
 {
     Set<char> result;
 
+    size_t setLengths1 = s1.cardinality();
+    for (size_t i = 0; i < setLengths1; ++i)
+    {
+        result.insertElement(s1[i]);
+    }
+
+    size_t setLengths2 = s2.cardinality();
+    for (size_t i = 0; i < setLengths2; ++i)
+    {
+            result.insertElement(s2[i]);
+    }
+
     return result;
 }
 
@@ -15,8 +27,8 @@ Set<char> setUnion(const Set<char>& s1, const Set<char>& s2)
 Set<char> setIntersection(const Set<char>& s1, const Set<char>& s2)
 {
     Set<char> result;
-    size_t setLength = s1.cardinality();
 
+    size_t setLength = s1.cardinality();
     for (size_t i = 0; i < setLength; ++i)
     {
         if (s2.isElement(s1[i]))
