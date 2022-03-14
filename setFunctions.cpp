@@ -34,7 +34,6 @@ Set<char> setIntersection(const Set<char>& s1, const Set<char>& s2)
         if (s2.isElement(s1[i]))
             result.insertElement(s1[i]);
     }
-    // Add your code here
 
     return result;
 }
@@ -43,8 +42,13 @@ Set<char> setIntersection(const Set<char>& s1, const Set<char>& s2)
 Set<char> setDiff(const Set<char>& s1, const Set<char>& s2)
 {
     Set<char> result;
+    size_t setLengths1 = s1.cardinality();
 
-    // Add your code here
+    for (size_t i = 0; i < setLengths1; ++i)
+    {
+        if (!(s2.isElement(s1[i])))
+            result.insertElement(s1[i]);
+    }
 
     return result;
 }

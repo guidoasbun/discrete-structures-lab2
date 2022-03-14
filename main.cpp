@@ -26,16 +26,16 @@ int main()
     cout << "s1 = " << s1 << endl;
     cout << "s2 = " << s2 << endl;
 
-    cout << "The Union of sets s1 and s2\n";
+    cout << "\nThe Union of sets s1 and s2\n";
     cout << setUnion(s1, s2) << endl;
 
-    cout << "\nThe Intersection of sets s1 and s2\n\n";
+    cout << "\nThe Intersection of sets s1 and s2\n";
     cout << setIntersection(s1, s2) << endl;
 
-    cout << "The Difference of sets s1 and s2\n\n";
+    cout << "\nThe Difference of sets s1 and s2\n";
     cout << setDiff(s1, s2) << endl;
 
-    cout << "The Symmetric Difference of sets s1 and s2\n\n";
+    cout << "\nThe Symmetric Difference of sets s1 and s2\n";
     cout << setSymDiff(s1, s2) << endl;
 
     cout << "\nSets s3, s4, s5 and ss\n";
