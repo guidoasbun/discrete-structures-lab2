@@ -35,7 +35,7 @@ int main()
     cout << "The Difference of sets s1 and s2\n\n";
     cout << setDiff(s1, s2) << endl;
 
-    cout << "The Symetric Difference of sets s1 and s2\n\n";
+    cout << "The Symmetric Difference of sets s1 and s2\n\n";
     cout << setSymDiff(s1, s2) << endl;
 
     cout << "\nSets s3, s4, s5 and ss\n";
