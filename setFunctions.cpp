@@ -1,6 +1,7 @@
 #include "setFunctions.h"
 #include "set.h"
 #include "set.cpp"
+#include "math.h"
 
 using namespace std;
 
@@ -54,7 +55,7 @@ Set<char> setDiff(const Set<char> &s1, const Set<char> &s2)
     return result;
 }
 
-// Returns a set that is the symetric difference of the two sets s1 and s2
+// Returns a set that is the symmetric difference of the two sets s1 and s2
 Set<char> setSymDiff(const Set<char> &s1, const Set<char> &s2)
 {
     Set<char> result;
@@ -67,7 +68,7 @@ Set<char> setSymDiff(const Set<char> &s1, const Set<char> &s2)
     }
 
     size_t setLengths2 = s2.cardinality();
-    for (size_t i = 0; i < setLengths1; ++i)
+    for (size_t i = 0; i < setLengths2; ++i)
     {
         if (!(s1.isElement(s2[i])))
             result.insertElement(s2[i]);
@@ -79,7 +80,9 @@ Set<char> setSymDiff(const Set<char> &s1, const Set<char> &s2)
 // Returns true if s1 is a subset of s2
 bool isSubSet(const Set<char> &s1, const Set<char> &s2)
 {
-    // Add your code here and return the correct truth value
+
+
+
     return true;
 }
 
@@ -94,8 +97,13 @@ bool isProperSubSet(const Set<char> &s1, const Set<char> &s2)
 Set<Set<char>> PowerSet(const Set<char> &s)
 {
     Set<Set<char>> result;
+    result.insertElement({});
+    size_t sLength = s.cardinality();
+    size_t powerSetLength = pow(2, sLength);
 
-    // Add your code here
+//    Set<char> temp{s[0], s[1]};
+
+    result.insertElement({s[0], s[1], s[2]});
 
     return result;
 }
