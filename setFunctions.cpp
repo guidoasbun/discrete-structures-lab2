@@ -1,7 +1,7 @@
 #include "setFunctions.h"
 #include "set.h"
 #include "set.cpp"
-#include "math.h"
+#include <cmath>
 
 using namespace std;
 
@@ -80,10 +80,20 @@ Set<char> setSymDiff(const Set<char> &s1, const Set<char> &s2)
 // Returns true if s1 is a subset of s2
 bool isSubSet(const Set<char> &s1, const Set<char> &s2)
 {
+    size_t setLengths1 =s1.cardinality();
+    bool subset = true;
 
+    int index{0};
+    while (subset && (index < setLengths1))
+    {
+        if(!s2.isElement(s1[index]))
+        {
+            subset = false;
+        }
+        ++index;
+    }
 
-
-    return true;
+    return subset;
 }
 
 // Returns true if s1 is a proper subset of s2
