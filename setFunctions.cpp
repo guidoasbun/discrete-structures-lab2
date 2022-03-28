@@ -100,7 +100,12 @@ bool isSubSet(const Set<char> &s1, const Set<char> &s2)
 bool isProperSubSet(const Set<char> &s1, const Set<char> &s2)
 {
     // Add your code here and return the correct truth value
-    return true;
+    bool properSubset{false};
+
+    if ((isSubSet(s1, s2)) && (s1.cardinality() != s2.cardinality()))
+        properSubset = true;
+
+    return properSubset;
 }
 
 // Returns the Power Set of set s as a set of sets
@@ -122,5 +127,8 @@ Set<Set<char>> PowerSet(const Set<char> &s)
 bool isPartition(const Set<Set<char>> &p, const Set<char> &s)
 {
     // Add your code here and return the correct truth value
+
+
+
     return true;
 }
