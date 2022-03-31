@@ -80,13 +80,13 @@ Set<char> setSymDiff(const Set<char> &s1, const Set<char> &s2)
 // Returns true if s1 is a subset of s2
 bool isSubSet(const Set<char> &s1, const Set<char> &s2)
 {
-    size_t setLengths1 =s1.cardinality();
+    size_t setLengths1 = s1.cardinality();
     bool subset = true;
 
     int index{0};
     while (subset && (index < setLengths1))
     {
-        if(!s2.isElement(s1[index]))
+        if (!s2.isElement(s1[index]))
         {
             subset = false;
         }
@@ -112,23 +112,41 @@ bool isProperSubSet(const Set<char> &s1, const Set<char> &s2)
 Set<Set<char>> PowerSet(const Set<char> &s)
 {
     Set<Set<char>> result;
-    result.insertElement({});
-    size_t sLength = s.cardinality();
-    size_t powerSetLength = pow(2, sLength);
+    size_t setLength = s.cardinality();
+    size_t powerLength = 1 << setLength;
 
-//    Set<char> temp{s[0], s[1]};
-
-    result.insertElement({s[0], s[1], s[2]});
-
+    for (size_t i = 0; i < powerLength; ++i)
+    {
+        Set<char> temp;
+        for (size_t j = 0; j < setLength; ++j)
+        {
+            if (i & (1 << j))
+                temp.insertElement(s[j]);
+        }
+        result.insertElement(temp);
+    }
     return result;
 }
 
 // Returns true if the sets in p make up a Partition of set s
 bool isPartition(const Set<Set<char>> &p, const Set<char> &s)
 {
-    // Add your code here and return the correct truth value
+    bool result{true};
+    size_t setLength = p.cardinality();
 
-
-
-    return true;
+    if (!setLength)
+    {
+        result = false;
+    } else
+    {
+        Set<char> temp;
+        for (size_t i{0}; i < setLength; ++i)
+        {
+            size_t partSetLength = p[i].cardinality();
+            for (size_t j{0}; j < partSetLength; ++j)
+                temp.insertElement(p[i][j]);
+        }
+        temp == s ? result = true : result = false;
+    }
+    return result;
 }
