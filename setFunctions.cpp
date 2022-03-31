@@ -1,3 +1,8 @@
+/* Guido Asbun
+ * CS-262 Lab 2
+ * 31 March 2022
+ */
+
 #include "setFunctions.h"
 #include "set.h"
 #include "set.cpp"
